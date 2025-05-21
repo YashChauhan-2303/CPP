@@ -1,0 +1,30 @@
+# Ignore object files and binaries
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+
+# Ignore build directories
+/build/
+/bin/
+/debug/
+/release/
+
+# Ignore temporary or backup files
+*~
+*.tmp
+*.swp
+*.bak
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# macOS system files
+.DS_Store

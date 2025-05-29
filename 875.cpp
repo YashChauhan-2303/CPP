@@ -3,10 +3,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int checkSpeed(vector<int>& piles, int mid){
-    int count=0;
+long long checkSpeed(vector<int>& piles, int mid){
+    long long count=0;
     for(int i=0; i<piles.size(); i++){
-        count += (piles[i] + mid - 1) / mid;
+        count += (1LL *piles[i] + mid - 1) / mid;
     }
     return count;
 }
@@ -21,7 +21,7 @@ int minEatingSpeed(vector<int>& piles, int h) {
     int i=1, j=max;
     while(i<=j){
         int mid = i + (j-i)/2;
-        int hours = checkSpeed(piles,mid);
+        long long hours = checkSpeed(piles,mid);
         if(hours <= h) {
             ans = mid;
             j = mid - 1;
@@ -32,8 +32,8 @@ int minEatingSpeed(vector<int>& piles, int h) {
 }
 
 int main(){
-    vector<int> piles = { 312884470 };
-    int h= 312884469;
+    vector<int> piles = { 805306368,805306368,805306368 };
+    int h= 1000000000;
     cout << minEatingSpeed(piles,h);
     return 0;
 }

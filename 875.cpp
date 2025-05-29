@@ -17,20 +17,23 @@ int minEatingSpeed(vector<int>& piles, int h) {
     for( int i=1; i<n; i++){
         if(piles[i]>max) max=piles[i];
     }
+    int ans = max;
     int i=1, j=max;
     while(i<=j){
         int mid = i + (j-i)/2;
         int hours = checkSpeed(piles,mid);
-        if(hours == h) return mid;
-        else if ( hours > h) i = mid+1;
-        else j = mid-1;
+        if(hours <= h) {
+            ans = mid;
+            j = mid - 1;
+        }
+        else i = mid + 1;
     }
-    return -1;
+    return ans;
 }
 
 int main(){
-    vector<int> piles = { 3,6,7,11 };
-    int h=8;
+    vector<int> piles = { 312884470 };
+    int h= 312884469;
     cout << minEatingSpeed(piles,h);
     return 0;
 }

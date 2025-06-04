@@ -41,18 +41,22 @@ void printList(ListNode* head) {
 // }
 
 ListNode* removeNthFromEnd(ListNode* head, int n) {
-    ListNode* dummy = new ListNode(0);
-    dummy->next = head;
-    ListNode* fast  = dummy;
-    ListNode* slow  = dummy;
-    for(int i=0; i<=n; i++) fast=fast->next;
-    while(fast){
+    ListNode* fast  = head;
+    ListNode* slow  = head;
+    for(int i=0; i<n; i++) fast=fast->next;
+    if(fast == nullptr) {
+        ListNode* newHead = head->next;
+        delete(head);
+        return newHead;
+    }
+    while(fast->next){
         fast = fast->next;
         slow = slow->next;
     }
+    ListNode* toDelete = slow->next;
     slow->next = slow->next->next;
-    ListNode* newHead = dummy->next;
-    return newHead;
+    delete(toDelete);
+    return head;
 }
 
 int main(){

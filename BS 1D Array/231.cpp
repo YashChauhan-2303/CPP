@@ -4,6 +4,10 @@
 using namespace std;
 
 bool isPowerOfTwo(int n) {
+    return n > 0 && (n & (n - 1)) == 0;
+}
+
+bool isPowerOfTwo(int n) {
     if(n<=0) return 0;
     int x = n;
     while(x%2==0){

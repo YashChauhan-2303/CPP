@@ -66,8 +66,8 @@ void printList(ListNode* head) {
 // }
 
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-    ListNode* temp1 = reverseLL(l1);
-    ListNode* temp2 = reverseLL(l2);
+    ListNode* temp1 = (l1);
+    ListNode* temp2 = (l2);
     ListNode* newhead = new ListNode(-1);
     ListNode* head = newhead;
     int carry = 0;

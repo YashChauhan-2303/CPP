@@ -26,6 +26,8 @@ int thirdMax(vector<int>& nums) {
 }
 
 int main(){
+    char c  = 'c';
+    
     vector<int> num = { 1,2,2,5,3,5 };
     cout << thirdMax(num);
     return 0;

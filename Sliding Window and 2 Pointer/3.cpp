@@ -17,3 +17,25 @@
 //         return maxLen;
 //     }
 // };
+
+// class Solution {
+// public:
+//     int lengthOfLongestSubstring(string s) {
+//         int i = 0, r = 0;
+//         unordered_map<char,int> mp;
+//         int maxLen = 0;
+
+//         while(r<s.size()){
+//             if(mp.find(s[r]) == mp.end()){
+//                 mp[s[r]] = r;
+//             } else {
+//                 i = max(i,mp[s[r]]+1);
+//                 mp[s[r]] = r;
+//             }
+//             maxLen = max(maxLen, r-i+1);
+//             r++;
+//         }
+
+//         return maxLen;
+//     }
+// };

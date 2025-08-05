@@ -16,11 +16,11 @@
 //         return helper(preorder,i,INT_MAX);
 //     }
 
-//     TreeNode* helper(vector<int>& preorder, int i, int ub){
-//         if(i == preorder.size() || preorder[i] > bound) return nullptr;
+//     TreeNode* helper(vector<int>& preorder, int& i, int ub){
+//         if(i == preorder.size() || preorder[i] > ub) return nullptr;
 //         TreeNode* node = new TreeNode(preorder[i++]);
 //         node->left = helper(preorder,i,node->val);
-//         node->left = helper(preorder,i,ub);
+//         node->right = helper(preorder,i,ub);
 //         return node;
 //     }
 // };
